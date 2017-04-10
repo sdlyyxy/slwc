@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+  <!--<meta content="yes" name="apple-mobile-web-app-capable">
+  <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  
+  	<title>这是一个抢答器</title>
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+function setCookie(cname,cvalue,exdays){
+	var d = new Date();
+	d.setTime(d.getTime()+(exdays*24*60*60*1000));
+	var expires = "expires="+d.toGMTString();
+	document.cookie = cname+"="+cvalue;
+}
+function getCookie(cname){
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+	}
+	return "";
+}
+function checkCookie(){
+	var user=getCookie("userid");
+	if (user!=""){
+		//alert("Welcome again " + user);
+        document.getElementById("userid").value=user;
+	}
+}
+function formSetCookie(){
+	document.cookie = "userid=; expires=Thu, 01 Jan 1970 00:00:00 GMT"; 
+	setCookie("userid",document.getElementById("userid").value,2);
+	//alert(String(document.getElementById("userid")));
+}
+</script>
+
+    <script type="text/javascript">  
+    function getInnerHTML(){  
+        alert(document.getElementById("userid").value);  
+    }  
+    </script>  
+
+</head>
+<body class="jumbotron" onload="checkCookie()">
+	
+  <div class="container">
+  <!--<div class="jumbotron">-->
+    <h1>Mr.K!</h1>
+  <!--</div>-->
+  <!--</div>
+	
+
+<div class="container">-->
+	 <!--<p id="test"><font color="#000">嗨豆壳 www.hi-docs.com</font></p>  -->
+<form role="form" action="final.php" 
+method="GET" onsubmit="formSetCookie()">
+
+	<div class="form-group">
+		<label for="name" id="mylable">学号</label>
+		<input required name="id"  class="form-control" id="userid" pattern="2016\d{6}"
+			   placeholder="请输入学号">
+		<!--<p class="help-block">请输入十位学号。</p>-->
+	</div>
+
+	<div class="form-group">
+		<label for="name">题目编号</label>
+		<input required name="qid" type="text" class="form-control" id="userqid" 
+			   placeholder="请输入题目编号">
+	</div>
+
+	<div class="form-group">
+		<label for="name">答案</label>
+		<input required name="ans" type="text" class="form-control" id="userans" 
+			   placeholder="请输入答案">
+	</div>
+
+	<button type="submit" class="btn btn-default">提交</button>
+
+ <!--<input type="button" onclick="getInnerHTML()" value="点击" />  -->
+
+</form>
+</div>
+</body>
+</html>
+
+<!--id qid ans-->
