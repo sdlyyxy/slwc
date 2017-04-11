@@ -24,14 +24,34 @@
 <body class="jumbotron">
 
 	<div class="container">
-		<h1>恭喜您答对了！</h1>
-		<p>您是第<strong>{right_number}</strong>位答对<strong>{right_problem}</strong>题的同学。</p>
-		<p><a class="btn btn-primary btn-lg" role="button" onclick="jump()">
-			继续答题</a>
-						<a class="btn btn-primary btn-lg" role="button" onclick="jumpToRank()">
-			排行榜
-			</a>
-		</p>
+<div class="page-header">
+    
+    <h1>排行榜
+        <small>第十一届北京邮电大学团竞赛</small>
+    </h1>
+</div>
+
+<div>
+    <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr><th width="10%">排名</th>
+        <th width="14%">学号</th>
+        <th width="8%">题数</th>
+        <th width="8%">得分</th>
+        </tr>
+    </thead>
+	<tbody>
+		<!--<tr><td>1</td><td>test#lvdehuaiying</td><td>5</td><td>952</td></tr>
+				<tr>
+            <td>2</td>
+            <td>wen</td>
+            <td>5</td>
+            <td>951</td>
+		</tr>-->
+		{table_content}
+	</tbody>
+    </table>
+</div>
 
 		<div>
 			<br>
