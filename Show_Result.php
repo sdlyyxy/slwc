@@ -111,7 +111,25 @@
 	else
     {
         $student_json_name=$dataPath.$student_id.".json";
-        $student_json_file=fopen($student_json_name,'r');
+        if(file_exists($student_json_name))
+        {
+            $student_json_file=fopen($student_json_name,'r');
+            //echo "exist";
+        }
+        else
+        {
+            //echo "not exist";
+            $template=fopen($dataPath."Students_Template.json",'r');
+            $template_data=fgets($template);
+            //echo $template_data;
+            $student_json_file=fopen($student_json_name,'w');
+            fwrite($student_json_file,$template_data);
+            fclose($template);
+            fclose($student_json_file);
+
+            $student_json_file=fopen($student_json_name,'r');
+
+        }
         $student_json_data=fgets($student_json_file);
         //echo $student_json_data;
         fclose($student_json_file);

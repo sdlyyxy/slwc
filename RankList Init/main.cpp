@@ -27,12 +27,14 @@ int main() {
      ****in the same folder of****
      ****ranklist.php!!!!!********/
     system("ls 2016* > StudentsList.chg");//change document
-    ifstream studentsList_in("StudentsList.chg");
+    ifstream studentsList_in;//("StudentsList.chg");
+    studentsList_in.open("StudentsList.chg");
     string studentJsonName;
     vector<student>allStudent;
     while(studentsList_in>>studentJsonName)
     {
-        ifstream studentJson_in(studentJsonName);
+        ifstream studentJson_in;//(studentJsonName);
+        studentJson_in.open(studentJsonName.c_str());
         string studentId=studentJsonName.substr(0,10);
         //cout<<studentId<<endl;
         for(int i=0;i<17;++i)//throw unused characters
@@ -45,9 +47,10 @@ int main() {
         allStudent.push_back(student(studentId,tempCorrectTimes,tempRank));
     }
     sort(allStudent.begin(),allStudent.end());
-    ofstream StudentRankList_o("StudentRankList.txt");
+    ofstream StudentRankList_o;//("StudentRankList.txt");
+    StudentRankList_o.open("StudentRankList.txt");
     long long rankNum=0;
-    for(auto i=allStudent.rbegin();i!=allStudent.rend();++i)
+    for(vector<student>::reverse_iterator i=allStudent.rbegin();i!=allStudent.rend();++i)
     {
         StudentRankList_o<<"<tr><td>"<<++rankNum<<"</td><td>"<<i->studentId;
         StudentRankList_o<<"</td><td>"<<i->correctTimes<<"</td><td>"<<i->rank;
