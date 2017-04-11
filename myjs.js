@@ -25,6 +25,9 @@ function formSetCookie() {
     setCookie("userid", document.getElementById("userid").value, 2);
     //alert(String(document.getElementById("userid")));
 }
+function jump(){
+    self.location='index.html'
+}
 function jumpToRank() {
     self.location = 'ranklist.php'
 }

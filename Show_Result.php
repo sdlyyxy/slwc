@@ -12,13 +12,14 @@
 	$outPut.="   ";  
 	$outPut.=$answer;
 	$outPut.="   "; 
+    $dataPath="local_data/";
 
-	$xml=simplexml_load_file("Qustion_Data_Base87373a3c11a6e866f2aa56f6ab9be8d4.xml");
+	$xml=simplexml_load_file($dataPath."Qustion_Data_Base87373a3c11a6e866f2aa56f6ab9be8d4.xml");
 	$stdAns=$xml->$question_id;
 	if($stdAns==$answer)
 	{
         //update student attribute
-        $student_json_name=$student_id.".json";
+        $student_json_name=$dataPath.$student_id.".json";
         if(file_exists($student_json_name))
         {
             $student_json_file=fopen($student_json_name,'r');
@@ -27,7 +28,7 @@
         else
         {
         	//echo "not exist";
-        	$template=fopen("Students_Template.json",'r');
+        	$template=fopen($dataPath."Students_Template.json",'r');
         	$template_data=fgets($template);
         	//echo $template_data;
             $student_json_file=fopen($student_json_name,'w');
@@ -48,7 +49,7 @@
 		if($student_ansflag==0)//haven't answer right yet
         {
 
-            $sqlFile = fopen("QustionAnswerTimes.json", 'r');
+            $sqlFile = fopen($dataPath."QustionAnswerTimes.json", 'r');
             $data = fgets($sqlFile);
             fclose($sqlFile);
             $data = substr($data, 0, strlen($data) - 1);
@@ -59,7 +60,7 @@
             $outData = json_encode($obj);
             $outData .= "\n";
             //echo $outData;
-            $sqlFile = fopen("QustionAnswerTimes.json", 'w');
+            $sqlFile = fopen($dataPath."QustionAnswerTimes.json", 'w');
             fwrite($sqlFile, $outData);
             fclose($sqlFile);
 
@@ -108,7 +109,7 @@
 
 	else
     {
-        $student_json_name=$student_id.".json";
+        $student_json_name=$dataPath.$student_id.".json";
         $student_json_file=fopen($student_json_name,'r');
         $student_json_data=fgets($student_json_file);
         //echo $student_json_data;
@@ -134,7 +135,7 @@
 
 
 //  write log
-	$stFile=fopen("Connection.log",'a');
+	$stFile=fopen($dataPath."Connection.log",'a');
 	$outPut.="\n";
 	fwrite($stFile,$outPut);
 	fclose($stFile);
