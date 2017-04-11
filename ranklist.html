@@ -3,55 +3,51 @@
 
 <head>
 	<meta charset="utf-8">
-	<!--<meta content="yes" name="apple-mobile-web-app-capable">
-  <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>排行榜</title>
 
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-		function jump() {
-			self.location = 'index.html'
-		}
-				function jumpToRank(){
-			self.location = 'ranklist.php'
-		}
-	</script>
+	<script src="myjs.js"></script>
 </head>
 
 <body class="jumbotron">
 
 	<div class="container">
-<div class="page-header">
-    
-    <h1>排行榜
-        <small>第十一届北京邮电大学团竞赛</small>
-    </h1>
-</div>
+		<div class="page-header">
 
-<div>
-    <table class="table table-bordered table-striped table-hover table-condensed">
-    <thead>
-        <tr><th width="10%">排名</th>
-        <th width="14%">学号</th>
-        <th width="8%">题数</th>
-        <th width="8%">得分</th>
-        </tr>
-    </thead>
-	<tbody>
-		<!--<tr><td>1</td><td>test#lvdehuaiying</td><td>5</td><td>952</td></tr>
-				<tr>
-            <td>2</td>
-            <td>wen</td>
-            <td>5</td>
-            <td>951</td>
-		</tr>-->
-		{table_content}
-	</tbody>
-    </table>
-</div>
+			<h1>排行榜
+				<small>第一届北京邮电大学团知识竞赛</small>
+			</h1>
+			<p class="text-right">
+			<a class="btn btn-primary btn-lg" role="button" onclick="jump()">
+			继续答题
+			</a>
+			</p>
+		</div>
+
+		<div>
+			<table class="table table-bordered table-striped table-hover table-condensed">
+				<thead>
+					<tr>
+						<th width="10%">排名</th>
+						<th width="14%">学号</th>
+						<th width="8%">题数</th>
+						<th width="8%">得分</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--<tr>
+						<td>rank</td>
+						<td>students id</td>
+						<td>number</td>
+						<td>score</td>
+					</tr>-->
+					{table_content}
+				</tbody>
+			</table>
+		</div>
 
 		<div>
 			<br>
@@ -77,9 +73,4 @@
 </body>
 
 </html>
-
-<!--id qid ans-->
-
-
-
 
