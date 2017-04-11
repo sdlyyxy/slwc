@@ -22,4 +22,6 @@ A 'online judge' system.
 
 `RankList_Init`是一个可执行文件，从每个学生的json读取数据处理成html的表格形式，结果被`ranklist.php`处理到`ranklist.html`的模板中。
 
+***
+
 > 学全栈，找Mr.K。 --sdlyyxy
