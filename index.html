@@ -39,6 +39,9 @@
 			setCookie("userid", document.getElementById("userid").value, 2);
 			//alert(String(document.getElementById("userid")));
 		}
+		function jumpToRank(){
+			self.location = 'ranklist.php'
+		}
 	</script>
 
 	<script type="text/javascript">
@@ -60,6 +63,13 @@
 
 <div class="container">-->
 		<!--<p id="test"><font color="#000">嗨豆壳 www.hi-docs.com</font></p>  -->
+
+		<p class="text-right">
+			<a class="btn btn-primary btn-lg" role="button" onclick="jumpToRank()">
+			排行榜
+			</a>
+		</p>
+
 		<form role="form" action="Show_Result.php" method="GET" onsubmit="formSetCookie()">
 
 			<div class="form-group">
@@ -95,7 +105,7 @@
 				</blockquote>
 			</footer>
 		</div>
-		
+
 	</div>
 </body>
 
