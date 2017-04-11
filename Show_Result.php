@@ -120,7 +120,7 @@
         {
             $did_answered_Content=file_get_contents("did_answered.html");
             $did_answered_Content=str_replace('{right_problem}',$question_id,$did_answered_Content);
-            echo $did_answered_Content; 
+            echo $did_answered_Content;
         }
         else
         {

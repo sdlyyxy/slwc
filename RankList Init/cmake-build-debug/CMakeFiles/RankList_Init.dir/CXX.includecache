@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/DxxK/Web/slwc/RankList Init/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+algorithm
+-
+vector
+-
+
