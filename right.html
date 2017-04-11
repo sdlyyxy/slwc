@@ -15,6 +15,9 @@
 		function jump() {
 			self.location = 'index.html'
 		}
+				function jumpToRank(){
+			self.location = 'ranklist.php'
+		}
 	</script>
 </head>
 
@@ -25,6 +28,9 @@
 		<p>您是第<strong>{right_number}</strong>位答对<strong>{right_problem}</strong>题的同学。</p>
 		<p><a class="btn btn-primary btn-lg" role="button" onclick="jump()">
 			继续答题</a>
+						<a class="btn btn-primary btn-lg" role="button" onclick="jumpToRank()">
+			排行榜
+			</a>
 		</p>
 
 		<div>
